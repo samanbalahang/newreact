@@ -448,33 +448,843 @@ import ReactDOM from 'react-dom';
 
 
 
-/*----------------------------------
+/*--------------------------------------------------------
 |
 |           04-28
 |           react Component props
-|
+|           how component comiunicate with each other
 |   
-|-------------------------------------*/
+|-----------------------------------------------------------*/
+// class IndecisionApp extends React.Component {
+//     render() {
+//         const title = "IndecisionApp!";
+//         const subTitle= "put your life in the hand of a computer.";
+//         const options = ["first option","second option", "third option"];
+//         return (
+//             <div>
+//                 {/* <Header title="IndecisionApp"/> */}
+//                 <Header title={title} subTitle={subTitle}/>
+//                 <Action />
+//                 <Options options={options} />
+//                 <AddOption />
+//             </div>
+//         )
+//     }
+// }
+// class Header extends React.Component {
+//     render() {
+//         console.log(this.props);
+
+//         return (
+//             <div>
+//                 <h1>
+//                     {this.props.title}
+//                 </h1>
+//                 <h2>
+//                     {this.props.subTitle}
+//                 </h2>
+//             </div>
+//         );
+//     }
+// }
+
+// class Action extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <button>
+//                     What should I do?
+//                 </button>
+//             </div>
+
+//         )
+//     }
+// }
+
+// class Options extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <h2>
+//                     your Option are here:( {this.props.options.length} items):
+//                 </h2>
+//                 <ul>
+//                     {
+//                      this.props.options.map(list => <Option key={list} listText={list} />)
+//                     }
+//                  </ul>
+//             </div>
+//         )
+//     }
+// }
+
+// class Option extends React.Component {
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
+
+// class AddOption extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <button>
+//                     Add new Option
+//                 </button>
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<IndecisionApp />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------
+|
+|           04-29
+|           Event handler
+|           
+|   
+|-----------------------------------------------------------*/
+// class IndecisionApp extends React.Component {
+//     render() {
+//         const title = "IndecisionApp!";
+//         const subTitle= "put your life in the hand of a computer.";
+//         const options = ["first option","second option", "third option"];
+//         return (
+//             <div>
+//                 {/* <Header title="IndecisionApp"/> */}
+//                 <Header title={title} subTitle={subTitle}/>
+//                 <Action />
+//                 <Options options={options} />
+//                 <AddOption />
+//             </div>
+//         )
+//     }
+// }
+// class Header extends React.Component {
+//     render() {
+//         console.log(this.props);
+
+//         return (
+//             <div>
+//                 <h1>
+//                     {this.props.title}
+//                 </h1>
+//                 <h2>
+//                     {this.props.subTitle}
+//                 </h2>
+//             </div>
+//         );
+//     }
+// }
+
+// class Action extends React.Component {
+//     handlePick(){
+//         console.log("a");
+
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.handlePick}>
+//                     What should I do?
+//                 </button>
+//             </div>
+
+//         )
+//     }
+// }
+
+// class Options extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <h2>
+//                     your Option are here:( {this.props.options.length} items):
+//                 </h2>
+//                 <ul>
+//                     {
+//                      this.props.options.map(list => <Option key={list} listText={list} />)
+//                     }
+//                  </ul>
+//             </div>
+//         )
+//     }
+// }
+
+// class Option extends React.Component {
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
+
+// class AddOption extends React.Component {
+//     addNewOption(e){
+//         e.preventDefault();
+//         if(e.target.elements.option.value.trim()){
+//             let option = e.target.elements.option.value
+
+//         }
+//         console.log("new Option");
+
+//     }
+//     handleRemoveAll(){
+//         console.log("handleRemoveAll");
+
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <form action="#" onSubmit={this.addNewOption}>
+//                     <input type="text" name='option' id='option'  className='form-controle'/>
+//                     <input type="submit" value="Add new Option" className='btn btn-success' />
+//                 </form>
+//                 <button onClick={this.handleRemoveAll}>
+//                     Remove All options
+//                 </button>
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<IndecisionApp />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-30
+// |           binding
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class IndecisionApp extends React.Component {
+//     render() {
+//         const title = "IndecisionApp!";
+//         const subTitle= "put your life in the hand of a computer.";
+//         const options = ["first option","second option", "third option"];
+//         return (
+//             <div>
+//                 {/* <Header title="IndecisionApp"/> */}
+//                 <Header title={title} subTitle={subTitle}/>
+//                 <Action />
+//                 <Options options={options} />
+//                 <AddOption />
+//             </div>
+//         )
+//     }
+// }
+// class Header extends React.Component {
+//     render() {
+//         console.log(this.props);
+
+//         return (
+//             <div>
+//                 <h1>
+//                     {this.props.title}
+//                 </h1>
+//                 <h2>
+//                     {this.props.subTitle}
+//                 </h2>
+//             </div>
+//         );
+//     }
+// }
+
+// class Action extends React.Component {
+//     handlePick(){
+//         console.log("a");
+
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <button onClick={this.handlePick}>
+//                     What should I do?
+//                 </button>
+//             </div>
+
+//         )
+//     }
+// }
+
+// class Options extends React.Component {
+//     constructor(props){
+//         super(props);
+//         this.handleRemoveAll = this.handleRemoveAll.bind(this);
+//     }
+//     handleRemoveAll(){
+//         // CAN't access props here!
+//         console.log("handleRemoveAll");
+//         console.log(this.props.options);
+
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 {/* <button onClick={this.handleRemoveAll.bind(this)}> */}                 {/* EXPENSIVE */}
+//                 <button onClick={this.handleRemoveAll}>
+//                     Remove All options
+//                 </button>
+//                 <h2>
+//                     your Option are here:( {this.props.options.length} items):
+//                 </h2>
+//                 <ul>
+//                     {
+//                      this.props.options.map(list => <Option key={list} listText={list} />)
+//                     }
+//                  </ul>
+//             </div>
+//         )
+//     }
+// }
+
+// class Option extends React.Component {
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
+
+// class AddOption extends React.Component {
+//     addNewOption(e){
+//         e.preventDefault();
+//         if(e.target.elements.option.value.trim()){
+//             let option = e.target.elements.option.value
+
+//         }
+//         console.log("new Option");
+
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <form action="#" onSubmit={this.addNewOption}>
+//                     <input type="text" name='option' id='option'  className='form-controle'/>
+//                     <input type="submit" value="Add new Option" className='btn btn-success' />
+//                 </form>
+
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<IndecisionApp />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-32
+// |           component state
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class Counter extends React.Component{
+//     constructor(props){
+//         super(props)
+//         this.plusOne = this.plusOne.bind(this);
+//         this.minusOne = this.minusOne.bind(this);
+//         this.reset = this.reset.bind(this);
+//     }
+//     plusOne(){
+//        console.log("addone");
+
+//     }
+//     minusOne(){
+//         console.log("minusone");
+//     }
+//     reset(){
+//         console.log("reset");
+//     }
+//     render(){
+//         return (
+//             <div>
+//                 <h1>
+//                     Count: 0
+//                 </h1>
+//                 <button onClick={this.plusOne}>+1</button>
+//                 <button onClick={this.minusOne}>-1</button>
+//                 <button onClick={this.reset}>reset</button>
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<Counter />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-33
+// |           add state To counter
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class Counter extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.plusOne = this.plusOne.bind(this);
+//         this.minusOne = this.minusOne.bind(this);
+//         this.reset = this.reset.bind(this);
+//         this.state = {
+//             count: 0,
+
+//         }
+//     }
+//     plusOne() {
+//         console.log("addone");
+//         //    this.state.count = this.state.count + 1;  //NOT WORKING
+//         //    console.log(this.state.count);
+//         this.setState((prevState) => {
+//             return {
+//                 count: prevState.count + 1,
+//             }
+//         })
+
+//     }
+//     minusOne() {
+//         console.log("minusone");
+//         this.setState((prevState) => {
+//             if (prevState.count > 0) {
+//                 return {
+//                     count: prevState.count - 1,
+//                 }
+
+//             }
+//         })
+//     }
+//     reset() {
+//         console.log("reset");
+//         this.setState((prevState) => {
+//             return {
+//                 count: 0,
+//             }
+//         })
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <h1>
+//                     Count: {this.state.count}
+//                 </h1>
+//                 <button onClick={this.plusOne}>+1</button>
+//                 <button onClick={this.minusOne}>-1</button>
+//                 <button onClick={this.reset}>reset</button>
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<Counter />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-34
+// |           alter SetState
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class Counter extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.plusOne = this.plusOne.bind(this);
+//         this.minusOne = this.minusOne.bind(this);
+//         this.reset = this.reset.bind(this);
+//         this.state = {
+//             count: 0,
+//         }
+//     }
+//     plusOne() {
+//         console.log("addone");
+//         //    this.state.count = this.state.count + 1;  //NOT WORKING
+//         //    console.log(this.state.count);
+//         this.setState((prevState) => {
+//             return {
+//                 count: prevState.count + 1,
+//             }
+//         })
+
+//     }
+//     minusOne() {
+//         console.log("minusone");
+//         this.setState((prevState) => {
+//             if (prevState.count > 0) {
+//                 return {
+//                     count: prevState.count - 1,
+//                 }
+
+//             }
+//         })
+//     }
+//     reset() {
+//         console.log("reset");
+//         // this.setState(() => {
+//         //     return {
+//         //         count: 0,
+//         //     }
+//         // }); //OLD VERSION
+//         // this.setState((prevState) => {          
+//         //     return {
+//         //         count: prevState.count + 1,
+//         //     }
+//         // }); //OLD VERSION
+//         this.setState({
+//             count:0,
+//         });
+//         this.setState({
+//             count:this.state.count +1,
+//             // count:trevstate +1, //Sama as up
+//         });
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <h1>
+//                     Count: {this.state.count}
+//                 </h1>
+//                 <button onClick={this.plusOne}>+1</button>
+//                 <button onClick={this.minusOne}>-1</button>
+//                 <button onClick={this.reset}>reset</button>
+//             </div>
+//         )
+//     }
+
+// }
+
+// ReactDOM.render(<Counter />, document.getElementById("root"));
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-35
+// |           SetState To Visible
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class Visibility extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.plusOne = this.plusOne.bind(this);
+//         this.state = {
+//             isVisible: false,
+//         }
+//     }
+//     plusOne() {
+//         // console.log("addone");      
+//         this.setState((prevState) => {
+//             return {
+//                 isVisible: !prevState.isVisible,
+//             }
+//         })
+//     }
+//     render() {
+//         return (
+//             <div>
+//                 <h1>
+//                    Visibility toggle {this.state.isVisible}
+//                 </h1>
+//                 <button onClick={this.plusOne}>{this.state.isVisible ? 'hide detailes' : 'show detailes'}</button>
+//                 {this.state.isVisible && (
+//                     <div>
+//                         <p>
+//                             Hay, there is some details 
+//                         </p>
+//                     </div>
+//                 )}
+//             </div>
+//         )
+//     }
+// }
+// ReactDOM.render(<Visibility />, document.getElementById("root"));
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-36
+// |           indesition  state P01
+// |           
+// |   
+// |-----------------------------------------------------------*/
+// class IndecisionApp extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.handelDeleteOptions = this.handelDeleteOptions.bind(this);
+//         this.handlePick          = this.handlePick.bind(this);
+//         this.state = {
+//             options : ['first','second','third'] //[],
+//         }
+//     }
+//     handelDeleteOptions(){
+//         this.setState(()=>{
+//             return {
+//                 options:[],
+//             }
+//         });
+//     }
+//     handlePick(){
+//         if(this.state.options.length > 0){
+//             const random = this.state.options[Math.floor(Math.random() * this.state.options.length)];
+//             alert(random);
+//         }
+//     }
+//     render() {
+//         this.title  = "IndecisionApp!";
+//         this.subTitle = "put your life in the hand of a computer.";
+//         return (
+//             <div>
+//                 {/* <Header title="IndecisionApp"/> */}
+//                 <Header title={this.title} subTitle={this.subTitle}/>
+//                 <Action 
+//                         hasOption={this.state.options.length > 0}  
+//                         handlePick={this.handlePick}
+//                         />
+//                 <Options 
+//                         options={this.state.options} 
+//                         handelDeleteOptions = {this.handelDeleteOptions}
+
+//                         />
+//                 <AddOption  />
+//             </div>
+//         )
+//     }
+// }
+// class Header extends React.Component {
+//     render() {
+//         console.log(this.props);
+
+//         return (
+//             <div>
+//                 <h1>
+//                     {this.props.title}
+//                 </h1>
+//                 <h2>
+//                     {this.props.subTitle}
+//                 </h2>
+//             </div>
+//         );
+//     }
+// }
+
+// class Action extends React.Component {
+//     // handlePick(){
+//     //     console.log("a");
+//     // }
+//     render() {
+//         return (
+//             <div>
+//                 <button 
+//                         onClick={this.props.handlePick}
+//                         disabled={!this.props.hasOption}
+//                 >
+//                     What should I do?
+//                 </button>
+//             </div>
+//         )
+//     }
+// }
+
+// class Options extends React.Component {
+
+//     render() {
+//         return (
+//             <div>
+//                 {/* <button onClick={this.handleRemoveAll.bind(this)}> */}                 {/* EXPENSIVE */}
+//                 <button onClick={this.props.handelDeleteOptions}>
+//                     Remove All options
+//                 </button>
+//                 <h2>
+//                     your Option are here:( {this.props.options.length} items):
+//                 </h2>
+//                 <ul>
+//                     {
+//                      this.props.options.map(list => <Option key={list} listText={list} />)
+//                     }
+//                  </ul>
+//             </div>
+//         )
+//     }
+// }
+
+// class Option extends React.Component {
+//     render() {
+//         return (
+//             <li key={this.props.listText}>
+//                 {this.props.listText}
+//             </li>
+//         );
+//     }
+// }
+
+// class AddOption extends React.Component {
+//     addNewOption(e){
+//         e.preventDefault();
+//         if(e.target.elements.option.value.trim()){
+//             let option = e.target.elements.option.value
+
+//         }
+//         console.log("new Option");
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <form action="#" onSubmit={this.addNewOption}>
+//                     <input type="text" name='option' id='option'  className='form-controle'/>
+//                     <input type="submit" value="Add new Option" className='btn btn-success' />
+//                 </form>
+//             </div>
+//         )
+//     }
+// }
+
+// ReactDOM.render(<IndecisionApp />, document.getElementById("root"));
+
+
+
+
+
+// /*--------------------------------------------------------
+// |
+// |           04-37
+// |           indesition  state P01
+// |           
+// |   
+// |-----------------------------------------------------------*/
 class IndecisionApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handelDeleteOptions = this.handelDeleteOptions.bind(this);
+        this.handlePick = this.handlePick.bind(this);
+        this.addNewOption = this.addNewOption.bind(this);
+        this.state = {
+            options: [], //[],
+        }
+    }
+    handelDeleteOptions() {
+        this.setState(() => {
+            return {
+                options: [],
+            }
+        });
+    }
+    handlePick() {
+        if (this.state.options.length > 0) {
+            const random = this.state.options[Math.floor(Math.random() * this.state.options.length)];
+            alert(random);
+        }
+    }
+    addNewOption(option) {
+        if(!option.trim()){
+                return "Empty input Is not valid please add some text";
+        }else if (!this.state.options.includes(option)) {
+            this.setState((prevState) => {
+                prevState.options.push(option);
+                return {
+                    options: prevState.options,
+                }
+                // return {
+                //     options : prevState.options.concat([option]),
+                // }
+            })
+        }else{
+            return "this Item Already existed!";
+        }
+    }
     render() {
-        const title = "IndecisionApp!";
-        const subTitle= "put your life in the hand of a computer.";
-        const options = ["first option","second option", "third option"];
+        this.title = "IndecisionApp!";
+        this.subTitle = "put your life in the hand of a computer.";
         return (
             <div>
                 {/* <Header title="IndecisionApp"/> */}
-                <Header title={title} subTitle={subTitle}/>
-                <Action />
-                <Options options={options} />
-                <AddOption />
+                <Header title={this.title} subTitle={this.subTitle} />
+                <Action
+                    hasOption={this.state.options.length > 0}
+                    handlePick={this.handlePick}
+                />
+                <Options
+                    options={this.state.options}
+                    handelDeleteOptions={this.handelDeleteOptions}
+                />
+                <AddOption
+                    addNewOption={this.addNewOption}
+
+                />
             </div>
         )
     }
 }
 class Header extends React.Component {
     render() {
-        console.log(this.props);
-        
+        // console.log(this.props);
+
         return (
             <div>
                 <h1>
@@ -489,14 +1299,19 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+    // handlePick(){
+    //     console.log("a");
+    // }
     render() {
         return (
             <div>
-                <button>
+                <button
+                    onClick={this.props.handlePick}
+                    disabled={!this.props.hasOption}
+                >
                     What should I do?
                 </button>
             </div>
-
         )
     }
 }
@@ -505,14 +1320,18 @@ class Options extends React.Component {
     render() {
         return (
             <div>
+                {/* <button onClick={this.handleRemoveAll.bind(this)}> */}                 {/* EXPENSIVE */}
+                <button onClick={this.props.handelDeleteOptions}>
+                    Remove All options
+                </button>
                 <h2>
                     your Option are here:( {this.props.options.length} items):
                 </h2>
                 <ul>
                     {
-                     this.props.options.map(list => <Option key={list} listText={list} />)
+                        this.props.options.map(list => <Option key={list} listText={list} />)
                     }
-                 </ul>
+                </ul>
             </div>
         )
     }
@@ -529,16 +1348,42 @@ class Option extends React.Component {
 }
 
 class AddOption extends React.Component {
+    constructor(props) {
+        super(props);
+        this.addNewOption = this.addNewOption.bind(this);
+        this.state = {
+            error : undefined,
+        }
+    }
+    addNewOption(e) {
+        e.preventDefault();
+        const newItem = e.target.elements.option.value;
+        // console.log(newItem);
+        const error = this.props.addNewOption(newItem);
+        this.setState(()=>{
+            return {
+                error,
+            }
+        })
+        e.target.elements.option.value = "";
+        // if (newItem.trim()) {
+        //     // let option = e.target.elements.option.value
+        //     this.props.addNewOption(newItem);
+        //     e.target.elements.option.value = "";
+        // }
+    }
+
     render() {
         return (
             <div>
-                <button>
-                    Add new Option
-                </button>
+            {this.state.error && <p className='bg-danger'>{this.state.error}</p>}
+                <form action="#" onSubmit={this.addNewOption}>
+                    <input type="text" name='option' id='option' className='form-controle' />
+                    <input type="submit" value="Add new Option" className='btn btn-success' />
+                </form>
             </div>
         )
     }
-
 }
 
 ReactDOM.render(<IndecisionApp />, document.getElementById("root"));
